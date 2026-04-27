@@ -1,0 +1,52 @@
+---
+title: Google API Gateway monitoring integration
+tags:
+  - Integrations
+  - Google Cloud Platform integrations
+  - GCP integrations list
+metaDescription: 'Read about our Google API Gateway integration: how to activate it and what data it reports.'
+freshnessValidatedDate: never
+---
+
+Our [infrastructure integrations](/docs/infrastructure/introduction-infra-monitoring) with the [Google Cloud Platform (GCP)](https://cloud.google.com/) includes one that reports [Google API Gateway](https://cloud.google.com/api-gateway) data to our products. This document explains how to activate the GCP API Gateway integration and describes the data that can be reported.
+
+## Features
+
+Google API Gateway enables you to create, secure, and monitor APIs for Google Cloud services and serverless backends, including Cloud Functions, Cloud Run, and App Engine. It provides a fully managed gateway that lets you develop, deploy, and monitor APIs for secure access.
+
+## Activate integration [#activate]
+
+To enable the integration follow standard procedures to [connect your GCP service to New Relic](/docs/connect-google-cloud-platform-services-infrastructure).
+
+## Polling frequency [#polling]
+
+Our integrations query your GCP services according to a polling interval, which varies depending on the integration.
+
+* Polling frequency for GCP API Gateway: five minutes
+* Resolution: one data point every minute
+
+## View and use data [#find-data]
+
+After activating the integration and then waiting a few minutes (based on the [polling frequency](#polling)), data will appear in the UI. To [view and use your data](/docs/infrastructure/integrations/find-use-infrastructure-integration-data), including links to your <InlinePopover type="dashboards"/> and alert settings, go to <DNT>**[one.newrelic.com > All capabilities](https://one.newrelic.com/all-capabilities) > Infrastructure > GCP**</DNT>, then select an integration.
+
+## Metric data [#metrics]
+
+This integration reports the following [metric data](/docs/telemetry-data-platform/understand-data/new-relic-data-types/#metrics).
+
+### Available metrics [#available-metrics]
+
+| Metric Name | Description |
+|-------------|-------------|
+| `gcp.apigateway.gateway.request_count` | Number of API requests processed by the gateway. |
+| `gcp.apigateway.gateway.response_latencies` | Distribution of response latencies in milliseconds. |
+| `gcp.apigateway.gateway.response_code_class` | Response code class (2xx, 4xx, 5xx) for API requests. |
+
+## Inventory data [#inventory]
+
+Our GCP API Gateway integration captures the following inventory data:
+
+| Name | Description |
+|------|-------------|
+| `gateway_id` | The unique identifier for the API Gateway. |
+| `location` | The GCP region where the gateway is deployed. |
+| `project_id` | The GCP project ID associated with the gateway. |
